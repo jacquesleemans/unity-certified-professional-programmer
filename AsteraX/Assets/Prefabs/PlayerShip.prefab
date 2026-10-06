@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4128896187653560}
+  - component: {fileID: 8062405319886597871}
   m_Layer: 8
   m_Name: TurretRotator
   m_TagString: Untagged
@@ -32,6 +33,21 @@ Transform:
   - {fileID: 4599906963886276}
   m_Father: {fileID: 4368249187107940}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!114 &8062405319886597871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1194270976900878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2246fa91eb5f94b4d8b21c6d1828cc8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TurretPointAtMouse
+  _transform: {fileID: 4128896187653560}
+  mainCamera: {fileID: 0}
+  mousePoint3d: {x: 0, y: 0, z: 0}
 --- !u!1 &1334640751579420
 GameObject:
   m_ObjectHideFlags: 0
@@ -314,6 +330,7 @@ GameObject:
   - component: {fileID: 4368249187107940}
   - component: {fileID: 135344746280246978}
   - component: {fileID: 54827132454177206}
+  - component: {fileID: 1959541975957930447}
   - component: {fileID: 7124258394044319658}
   - component: {fileID: 6722625590477583926}
   m_Layer: 8
@@ -388,6 +405,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 120
   m_CollisionDetection: 0
+--- !u!114 &1959541975957930447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1664251521892296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c032d16897ba5a47a41535ed3234acb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OffScreenWrapper
 --- !u!114 &7124258394044319658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -419,6 +448,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerCtrl
   _rb: {fileID: 54827132454177206}
   _speed: 500
+  _camera: {fileID: 0}
+  _projectilePrefab: {fileID: 1657914042213664, guid: 0e9c239fd33d94404b671bc44ab4f6b4,
+    type: 3}
 --- !u!1 &1957318569610646
 GameObject:
   m_ObjectHideFlags: 0

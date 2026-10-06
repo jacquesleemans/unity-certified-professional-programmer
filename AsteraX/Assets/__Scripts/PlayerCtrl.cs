@@ -6,6 +6,8 @@ public class PlayerCtrl : Singleton<PlayerCtrl>
 {
     [SerializeField] private Rigidbody _rb;
     [SerializeField] private float _speed = 1;
+    [SerializeField] private Camera _camera;
+    [SerializeField] private GameObject _projectilePrefab;
 
     private void Reset()
     {
@@ -36,5 +38,13 @@ public class PlayerCtrl : Singleton<PlayerCtrl>
     private void Fire()
     {
         var mousePosition = InputHandlerCtrl.Instance.MousePosition;
+        
+        mousePosition.z = -_camera.transform.position.z;
+        
+        Vector3 pos3d = _camera.ScreenToWorldPoint(mousePosition);
+        
+        GameObject bullet = Instantiate(_projectilePrefab);
+        bullet.transform.position = transform.position;
+        bullet.transform.LookAt(pos3d);
     }
 }
